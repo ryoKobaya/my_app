@@ -1,0 +1,13 @@
+<h2>みんなの投稿</h2>
+<%@posts.each do |post|%>
+	<%@user=User.find_by(id:post.user_id)%>
+	<div class="myposts-item">
+		<img src="<%="/user_images/#{@user.image_name}"%>" width="50",height="50">
+	</div>
+	<div class="post-container"> 
+		<%=link_to(post.name,"/#{post.user_id}",{class:"post"}) %>
+		<br>
+		<%=link_to(post.content,"/#{post.user_id}/#{post.id}",{class:"post-content"})%>
+	</div>
+	<br>
+<%end%>

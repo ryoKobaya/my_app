@@ -1,0 +1,13 @@
+<h2>ユーザー情報を編集</h2>
+<%=form_tag("/register/change",{multipart:true}) do%>
+<p>氏名</p>
+<input type="string" name="name" value=<%=@current_user.name%>>
+<p>プロフィール画像</p>
+<input type="file" name="image">
+<p>メールアドレス</p>
+<input type="text" name="mail" value=<%=@current_user.mail%>>
+<p>パスワード</p>
+<input type="password" name="password" value=<%=@current_user.password%>>
+<p></p>
+<input type="submit" value="登録">
+<%end%>

@@ -1,0 +1,107 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ .header-logo{
+    color:white;
+    float: left;
+    font-family: serif;
+    font-weight: 600;
+    padding: 20px;
+ }
+ ul.header-menus li{
+    float: left;
+    list-style: none;
+    padding: 20px;
+ }
+ header{
+     background-color: yellowgreen;
+     font-size: 15pt;
+     height: 80px;
+ }
+ .under-element{
+     clear: both;
+     background-color: turquoise;
+ }
+ .mypage{
+     text-decoration: none;
+     color: white;
+ }
+ .edit_inf{
+    text-decoration: none;
+    color: white;
+}
+.logout{
+    text-decoration: none;
+    color:white
+}
+.newpost{
+    text-decoration: none;
+    color: white;
+}
+.timeline{
+    text-decoration: none;
+    color:white
+}
+.login{
+    text-decoration: none;
+    color:white
+}
+.post{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+}
+.post-content{
+    text-decoration: none;
+    color:black;
+}
+.myposts-item{
+    background-color: whitesmoke;
+    float: left;
+    /*background-color: turquoise;*/
+    padding: 20px;
+    height: 50px;
+}
+.post-container{
+    padding: 20px;
+    background-color: whitesmoke;
+    height: 50px;
+    width: 400px;
+}
+.item{
+    background-color: rgb(201, 247, 243);
+    font-size: large;
+    height: 80px;
+}
+ img{
+    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+    width:  50px;       /* ※縦横を同値に */
+    height: 50px;       /* ※縦横を同値に */
+ }
+ .show{
+    float: left;
+ }
+ .image{
+    float: left;
+ }
+ h2{
+     background-color: yellowgreen;
+     color:white;
+     padding-left: 20px;
+ }
+ p{
+     font-weight: 600;
+ }
+ 

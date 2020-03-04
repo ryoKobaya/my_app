@@ -1,0 +1,11 @@
+<h2>ログイン画面</h2>
+<%=form_tag("/login") do%>
+<p>ユーザー名（メールアドレス）</p>
+<input type="text" name="mail">
+<p>パスワード</p>
+<input type="password" name="password">
+<p></p>
+<input type="submit"value="ログイン">
+<%end%>
+<%=link_to("まだ登録されていない方はこちら","/register")%>
+

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+	<header>
+		<%if session[:user_id]%>
+			<div class="header-logo">
+				NewRoot
+			</div>
+			<ul class="header-menus">
+				<li>
+					<%=link_to("マイページ","/#{@current_user.id}",{class:"mypage"})%>
+				</li>
+				<li>
+					<%=link_to("タイムライン","/timeline",{class:"timeline"})%>     
+				</li>
+				<li>
+					<%=link_to("新規投稿","/newpost",{class:"newpost"})%>
+				</li>
+				<li>
+					<%= link_to("ユーザー情報の変更","/#{@current_user.name}/edit_inf",{class:"edit_inf"})%>
+				</li>
+				<li>
+					<%=link_to("ログアウト","/logout",{class:"logout"})%>
+				</li>
+				<li class="condition">
+					<%@user=User.find_by(id:session[:user_id])%>
+					<%if @user%>
+						<%="#{@user.name}でログイン中"%>
+					<%end%>
+				</li>
+		<% else %>
+				<div class="header-logo">
+				NewRoot
+				</div>
+				<ul class="header-menus">
+				<li>
+					<%=link_to("タイムライン","/timeline",{class:"timeline"})%>     
+				</li>
+				<li>
+					<%=link_to("ログイン","/login",{class:"login"})%>
+				</li>
+		<% end %>
+
+	</header>
+	<div class="under-element">
+		<%if flash[:notice]%>
+			<div class="flash-message">
+			<%=flash[:notice]%>
+			</div>
+		<%end%>
+	</div>
+		<%= yield %>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<h2>投稿詳細</h2>
+<div class="image">
+<img src="<%="/user_images/#{@user.image_name}"%>" width="50",height="50">
+</div>
+<div class="show">
+<%=link_to(@name,"/#{@user_id}")%>
+<%=@post.content%>
+<%@current_user_id=(@current_user.id).to_i %>
+<%@user_id=@user_id.to_i%>
+<% if @user_id==@current_user_id %>
+    <%=link_to("編集","/#{@user_id}/#{@id}/edit")%>
+    <%=link_to("削除","/#{@user_id}/#{@id}/confirm")%>
+<% end %>
+<br>
+<%=@post.created_at%>
+</div>
